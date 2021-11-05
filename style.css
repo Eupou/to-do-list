@@ -32,13 +32,13 @@ input:focus {
 .titulo-anotacoes {
   font-family: monospace;
   font-size: 25px;
-  margin-left: 15px;
+  text-align: center;
   color: rgb(31, 30, 30);
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .anotacoes {
-  margin-top: 5px;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,6 +50,29 @@ input:focus {
   font-family: monospace;
   font-size: 19px;
   font-weight: 600;
+  transition: 0.3s;
+}
+
+.anotacoes:hover {
+  cursor: pointer;
+  background-color: rgb(207, 206, 206);
+}
+
+.c-tarefas-dia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-tarefa {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(238, 236, 236);
+  width: 420px;
+  height: 50px;
+  font-size: 20px;
 }
 
 .c-main {
@@ -101,4 +124,8 @@ input:focus {
   opacity: 0.5;
   text-decoration: line-through;
   background-color: black;
+}
+
+.dia-selecionado {
+  background-color: rgb(182, 179, 179);
 }

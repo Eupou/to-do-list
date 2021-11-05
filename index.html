@@ -8,10 +8,10 @@
     <title>To do list</title>
 </head>
 <body>
-    <section class="c-anotacoes">
+    <section class="c-anotacoes"  onselectstart="return false">
         <h1 class="titulo-anotacoes">Tarefas por dia da semana</h1>
         <div class="c-dias">
-            <div class="anotacoes">SEG</div>
+            <div class="anotacoes dia-selecionado">SEG</div>
             <div class="anotacoes">TER</div>
             <div class="anotacoes">QUA</div>
             <div class="anotacoes">QUI</div>
@@ -19,11 +19,12 @@
             <div class="anotacoes">SAB</div>
             <div class="anotacoes">DOM</div>
         </div>
+        <div class="c-tarefas-dia"></div>
     </section>
     <main class="c-main">
         <div class="c-tarefa">
             <h1 class="titulo-tarefa">Faster</h1>
-            <input class="input-tarefa" id="input-tarefa" placeholder="Adicione uma tarefa" type="text"">
+            <input class="input-tarefa" id="input-tarefa" placeholder="Adicione uma tarefa" type="text">
             <div class="c-tarefas" id="c-tarefas">
 
             </div>
