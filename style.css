@@ -12,11 +12,34 @@ input:focus {
   outline: 0;
 }
 
+textarea {
+  resize: none;
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.c-anotacoes::-webkit-scrollbar {
+  width: 12px;
+}
+
+.c-anotacoes::-webkit-scrollbar-track {
+  background-color: rgb(248, 246, 246);
+}
+
+.c-anotacoes::-webkit-scrollbar-thumb {
+  background-color: rgb(238, 236, 236);
+}
+
 ::-webkit-input-placeholder {
   color: aliceblue;
 }
 
 .c-anotacoes {
+  overflow-y: scroll;
   width: 450px;
   height: 100vh;
   background-color: white;
@@ -55,7 +78,7 @@ input:focus {
 
 .anotacoes:hover {
   cursor: pointer;
-  background-color: rgb(207, 206, 206);
+  background-color: rgb(182, 179, 179);
 }
 
 .c-tarefas-dia {
@@ -73,6 +96,35 @@ input:focus {
   width: 420px;
   height: 50px;
   font-size: 20px;
+}
+
+.c-descricao {
+  background-color: rgb(248, 246, 246);
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.espaco-descricao {
+  width: 410px;
+  height: 190px;
+}
+
+.button-descricao {
+  border: none;
+  background-color: rgb(238, 236, 236);
+  height: 30px;
+}
+
+.descricao-tarefas {
+  margin-left: 10px;
+  width: 410px;
+  height: 190px;
+  border: none;
+  background-color: rgb(248, 246, 246);
+  font-size: 20px;
+  text-align: justify;
 }
 
 .c-main {

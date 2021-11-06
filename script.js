@@ -12,7 +12,6 @@ let diasDaSemana = {
     sabado: [[],[]],
     domingo: [[],[]]
 }
-console.log(diasDaSemana)
 
 anotacoes.forEach(element => {
     element.addEventListener('click', marcaDiaDaSemana)
@@ -25,7 +24,6 @@ function marcaDiaDaSemana(e) {
     e.target.classList.add('dia-selecionado')
 
     mudaDiaSelecionado(e)
-    // console.log(e.path[0].outerText)
 }
 
 
@@ -40,7 +38,14 @@ function mudaDiaSelecionado(e) {
 
 inputTarefa.addEventListener('keyup', checaEnter)
 
-function adcionarListener() {
+
+function adcionarListener(a) {
+    if (a == "botão") { 
+        let botão = document.querySelectorAll('.button-descricao')
+        botão.forEach(element => {
+            element.addEventListener('click', adicionaTextAreaDescricao)
+        }) 
+    }
     let  tarefa = document.querySelectorAll('#tarefa')
     tarefa.forEach(element => {
         element.addEventListener('dblclick', marcaTarefaConcluida)
@@ -77,7 +82,6 @@ function checaDiaDaSemana(a = 0, b = false) {
         mostraTarefaNoLadoEsquerdo(diasDaSemana.segunda[0])
     } else if (diaSelecionado == "TER") {
         if (b == true) { // Retorna para função mostraTarefasNoCentro qual dia que ela tem que usar
-            console.log('nem mesmo cheguei a ver a luz do dia')
             return diasDaSemana.terca[0]
         }
 
@@ -143,7 +147,6 @@ function marcaTarefaConcluida(e) {
     if (e.target.parentElement.id == "tarefa") {
         e.path[1].classList.toggle('tarefa-conluida')
     } else {
-        console.log(e)
         e.path[0].classList.toggle('tarefa-conluida')
     }
 }
@@ -153,9 +156,18 @@ function mostraTarefaNoLadoEsquerdo(e) {
     for(let i = 0; i < e.length; i++) {
         mostraTarefasDoDia.innerHTML += `
             <div class="item-tarefa">${e[i]}</div>
+            <div class="c-descricao">
+                <div class="espaco-descricao">Adicione sua descrição</div>
+                <button class="button-descricao">editar</button>
+            </div>
         `
     }
+
+    let a = "botão"
+    adcionarListener(a)
 }
+
+
 
 function mostraTarefasNoCentro() {
     let e = checaDiaDaSemana(0, true)
@@ -167,3 +179,17 @@ function mostraTarefasNoCentro() {
         `
     }
 }
+
+function adicionaTextAreaDescricao(e) {
+    console.log(e)
+    e.path[1].children[0].innerHTML =  `<textarea class="descricao-tarefas"  maxlength="327" onselectstart="return true" value="oioi"></textarea>`
+}
+
+function adicionarTextoDescricao() {
+    let inputDescricao = document.querySelector('.descricao-tarefas')
+    let descricao = document.querySelector
+    // console.log(e.path[1].children[0].attributes[3].value)
+    // console.log(e)
+    console.log(inputDescricao.value)
+}
+
